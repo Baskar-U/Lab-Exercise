@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* General Body Styling */
+        body {
+            background: linear-gradient(135deg, #89f7fe, #66a6ff);
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Container Styling */
+        .container {
+            margin-top: 50px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        /* Animated Heading */
+        h1 {
+            font-size: 3rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Animated Image */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            transition: transform 0.5s, box-shadow 0.5s;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        img:hover {
+            transform: rotate(10deg) scale(1.1);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        /* List Group Styling */
+        .list-group-item {
+            font-size: 1.2rem;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid #ddd;
+            transition: transform 0.2s, background-color 0.3s;
+        }
+
+        .list-group-item:hover {
+            transform: scale(1.05);
+            background-color: #a8e6cf;
+        }
+
+        /* Button Styling */
+        .btn {
+            background-color: #66a6ff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            background-color: #56cfe1;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-bottom: 2px solid #66a6ff;
+        }
+
+        .nav-link {
+            color: #555 !important;
+            font-weight: bold;
+        }
+
+        .nav-link:hover {
+            color: #0077b6 !important;
+            text-decoration: underline;
+        }
+
+        /* Result Display */
+        #total-fare {
+            font-size: 1.5rem;
+            color: #0077b6;
+            font-weight: bold;
+            margin-top: 20px;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Travel Booking</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="train.html">Train</a></li>
+                    <li class="nav-item"><a class="nav-link" href="flight.html">Flight</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bus.html">Bus</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1 class="display-5 mb-4">Flight Booking Prices</h1>
+        <img src="https://assets.gqindia.com/photos/6540e2ba4622f7146b12b76b/16:9/w_2560%2Cc_limit/best-time-to-book-flights.jpg" width="400px" height="500px" alt="Flight" class="img-fluid">
+        <ul class="list-group mb-4">
+            <li class="list-group-item"><i class="fas fa-plane"></i> Chennai to Mumbai - <strong>Adult (1) => $2500</strong>, <strong>Children (1) => $1800</strong></li>
+            <li class="list-group-item"><i class="fas fa-plane"></i> Chennai to Delhi - <strong>Adult (1) => $3500</strong>, <strong>Children (1) => $2800</strong></li>
+            <li class="list-group-item"><i class="fas fa-plane"></i> Chennai to Bengaluru - <strong>Adult (1) => $1500</strong>, <strong>Children (1) => $1200</strong></li>
+            <li class="list-group-item"><i class="fas fa-plane"></i> Chennai to Kolkata - <strong>Adult (1) => $4500</strong>, <strong>Children (1) => $3000</strong></li>
+        </ul>
+
+        <!-- Booking Form -->
+        <form action="FlightBooking" method="post">
+            <div class="mb-3">
+                <label for="destination" class="form-label">Select Destination:</label>
+                <select id="destination" class="form-select">
+                    <option value="2500,1800">Chennai to Mumbai</option>
+                    <option value="3500,2800">Chennai to Delhi</option>
+                    <option value="1500,1200">Chennai to Bengaluru</option>
+                    <option value="4500,3000">Chennai to Kolkata</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="adults" class="form-label">Number of Adults:</label>
+                <input type="number" id="adults" class="form-control" min="0" value="0">
+            </div>
+            <div class="mb-3">
+                <label for="children" class="form-label">Number of Children:</label>
+                <input type="number" id="children" class="form-control" min="0" value="0">
+            </div>
+            <button type="button" class="btn" onclick="calculateFare()">Calculate Fare</button>
+        </form>
+        <h3 id="total-fare"></h3>
+        <a href="index.html" class="btn btn-back mt-4">Go Back</a>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function calculateFare() {
+            const destination = document.getElementById('destination').value.split(',');
+            const adultFare = parseInt(destination[0]);
+            const childFare = parseInt(destination[1]);
+
+            const numAdults = parseInt(document.getElementById('adults').value) || 0;
+            const numChildren = parseInt(document.getElementById('children').value) || 0;
+
+            const totalFare = (numAdults * adultFare) + (numChildren * childFare);
+            document.getElementById('total-fare').innerText = `Total Fare: $${totalFare}`;
+        }
+    </script>
+</body>
+</html>

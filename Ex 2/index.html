@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Ticket Booking</title>
+    <!-- Linking External CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Internal CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        img {
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        ul {
+            list-style-type: square;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1 style="text-shadow: 2px 2px 5px gray;">Online Ticket Booking</h1>
+        <img src="https://5.imimg.com/data5/PA/HH/MY-34433005/train-or-plane-tickets-500x500.jpg" 
+             alt="Transport Modes" usemap="#India" 
+             style="box-shadow: 5px 5px 15px rgba(0,0,0,0.3);">
+        <map name="India">
+            <area shape="rect" coords="31,98,160,170" href="train.html" alt="Train">
+            <area shape="poly" coords="354,122,420,102,457,107,468,164,420,170,354,150" href="bus.html" alt="Bus">
+            <area shape="rect" coords="166,20,335,63" href="flight.html" alt="Flight">
+        </map>
+        <p>Click on the medium of transport to see ticket prices.</p>
+    </center>
+</body>
+</html>

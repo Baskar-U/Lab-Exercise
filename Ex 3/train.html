@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Booking</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, #74ebd5, #acb6e5);
+            color: #333;
+            height: 100vh;
+        }
+        .container {
+            margin-top: 50px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        .btn-back {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="display-5 mb-4">Train Booking Prices</h1>
+        <img src="train.jpg" alt="Train" class="img-fluid">
+        <ul class="list-group mb-4">
+            <li class="list-group-item">TBM to Cuddalore - <strong>Adult (1) => $150</strong>, <strong>Children (1) => $100</strong></li>
+            <li class="list-group-item">TBM to Thanjavur - <strong>Adult (1) => $400</strong>, <strong>Children (1) => $320</strong></li>
+            <li class="list-group-item">TBM to Trichy - <strong>Adult (1) => $350</strong>, <strong>Children (1) => $300</strong></li>
+            <li class="list-group-item">TBM to Chidhambaram - <strong>Adult (1) => $180</strong>, <strong>Children (1) => $120</strong></li>
+        </ul>
+        <a href="index.html" class="btn btn-primary btn-lg btn-back">Go Back</a>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
